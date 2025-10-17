@@ -29,13 +29,13 @@ SUBMIT_OTP_URL = BASE_CIAM_URL + "/realms/xl-ciam/protocol/openid-connect/token"
 UA = os.getenv("UA")
 
 def validate_contact(contact: str) -> bool:
-    if not contact.startswith("628") or len(contact) > 14:
+    if not contact.startswith("628/08") or len(contact) > 14:
         print("Invalid number")
         return False
     return True
 
 def get_otp(contact: str) -> str:
-    # Contact example: "6287896089467"
+    # Contact example: "6287896089467/087896089467"
     if not validate_contact(contact):
         return None
     
